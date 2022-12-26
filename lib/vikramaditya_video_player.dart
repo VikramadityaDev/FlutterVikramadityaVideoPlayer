@@ -27,7 +27,7 @@ class VideosPlayer extends StatefulWidget {
 
 class _VideosPlayerState extends State<VideosPlayer> {
   late VideoPlayerController _videoPlayerController;
-  late ChewieController _chewieController;
+  ChewieController? _chewieController;
   late NetworkVideo selectedVideo;
   late double _maxHeight;
   bool loading = false;
@@ -48,7 +48,7 @@ class _VideosPlayerState extends State<VideosPlayer> {
       });
 
       if (!initialLoad) {
-        _chewieController.dispose();
+        _chewieController!.dispose();
         await _videoPlayerController.pause();
         await _videoPlayerController.seekTo(const Duration(seconds: 0));
       }
@@ -137,7 +137,7 @@ class _VideosPlayerState extends State<VideosPlayer> {
   @override
   void dispose() {
     _videoPlayerController.dispose();
-    _chewieController.dispose();
+    _chewieController!.dispose();
     super.dispose();
   }
 
@@ -156,7 +156,7 @@ class _VideosPlayerState extends State<VideosPlayer> {
             color: Colors.white,
             child: Stack(children: <Widget>[
               Chewie(
-                controller: _chewieController,
+                controller: _chewieController!,
               ),
               (widget.playlistStyle == Style.Style1)
                   ? Style1(
