@@ -5,12 +5,12 @@ class NetworkVideo {
   final String name;
   final String videoUrl;
   final String thumbnailUrl;
-  final NetworkVideoControl videoControl;
+  final NetworkVideoControl? videoControl;
 
   NetworkVideo(
       {required this.id,
       required this.name,
       required this.videoUrl,
       required this.thumbnailUrl,
-      required this.videoControl});
+      this.videoControl});
 }
