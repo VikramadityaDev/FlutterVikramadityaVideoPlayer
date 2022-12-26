@@ -68,54 +68,54 @@ class _VideosPlayerState extends State<VideosPlayer> {
           videoPlayerController: videoPlayer,
           aspectRatio: aspectRatio,
           autoPlay: (video.videoControl != null)
-              ? video.videoControl.autoPlay
+              ? video.videoControl!.autoPlay
               : false,
           startAt:
-          (video.videoControl != null) ? video.videoControl.startAt : null,
+          (video.videoControl != null) ? video.videoControl!.startAt : null,
           looping:
-          (video.videoControl != null) ? video.videoControl.looping : false,
+          (video.videoControl != null) ? video.videoControl!.looping : false,
           fullScreenByDefault: (video.videoControl != null)
-              ? video.videoControl.fullScreenByDefault
+              ? video.videoControl!.fullScreenByDefault
               : false,
           cupertinoProgressColors: (video.videoControl != null)
-              ? video.videoControl.cupertinoProgressColors
+              ? video.videoControl!.cupertinoProgressColors
               : null,
           materialProgressColors: (video.videoControl != null)
-              ? video.videoControl.materialProgressColors
+              ? video.videoControl!.materialProgressColors
               : null,
           placeholder: (video.videoControl != null)
-              ? video.videoControl.placeholder
+              ? video.videoControl!.placeholder
               : null,
           overlay:
-          (video.videoControl != null) ? video.videoControl.overlay : null,
+          (video.videoControl != null) ? video.videoControl!.overlay : null,
           showControlsOnInitialize: (video.videoControl != null)
-              ? video.videoControl.showControlsOnInitialize
+              ? video.videoControl!.showControlsOnInitialize
               : true,
           showControls: (video.videoControl != null)
-              ? video.videoControl.showControls
+              ? video.videoControl!.showControls
               : true,
           customControls: (video.videoControl != null)
-              ? video.videoControl.customControls
+              ? video.videoControl!.customControls
               : null,
           errorBuilder: (video.videoControl != null)
-              ? video.videoControl.errorBuilder
+              ? video.videoControl!.errorBuilder
               : null,
           allowedScreenSleep: (video.videoControl != null)
-              ? video.videoControl.allowedScreenSleep
+              ? video.videoControl!.allowedScreenSleep
               : true,
           isLive:
-          (video.videoControl != null) ? video.videoControl.isLive : false,
+          (video.videoControl != null) ? video.videoControl!.isLive : false,
           allowFullScreen: (video.videoControl != null)
-              ? video.videoControl.allowFullScreen
+              ? video.videoControl!.allowFullScreen
               : true,
           allowMuting: (video.videoControl != null)
-              ? video.videoControl.allowMuting
+              ? video.videoControl!.allowMuting
               : true,
           systemOverlaysAfterFullScreen: (video.videoControl != null)
-              ? video.videoControl.systemOverlaysAfterFullScreen
+              ? video.videoControl!.systemOverlaysAfterFullScreen
               : SystemUiOverlay.values,
           deviceOrientationsAfterFullScreen: (video.videoControl != null)
-              ? video.videoControl.deviceOrientationsAfterFullScreen
+              ? video.videoControl!.deviceOrientationsAfterFullScreen
               : const [
             DeviceOrientation.portraitUp,
             DeviceOrientation.portraitDown,
@@ -123,7 +123,7 @@ class _VideosPlayerState extends State<VideosPlayer> {
             DeviceOrientation.landscapeRight,
           ],
           routePageBuilder: (video.videoControl != null)
-              ? video.videoControl.routePageBuilder
+              ? video.videoControl!.routePageBuilder
               : null,
         );
         _maxHeight = (MediaQuery.of(context).size.width / aspectRatio) >
