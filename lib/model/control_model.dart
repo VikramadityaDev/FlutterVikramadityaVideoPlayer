@@ -7,7 +7,7 @@ class NetworkVideoControl {
   final bool autoPlay;
 
   /// Start video at a certain position
-  final Duration startAt;
+  final Duration? startAt;
 
   /// Whether or not the video should loop
   final bool looping;
@@ -20,26 +20,26 @@ class NetworkVideoControl {
 
   /// Defines customised controls. Check [MaterialControls] or
   /// [CupertinoControls] for reference.
-  final Widget customControls;
+  final Widget? customControls;
 
   /// When the video playback runs  into an error, you can build a custom
   /// error message.
-  final Widget Function(BuildContext context, String errorMessage) errorBuilder;
+  final Widget Function(BuildContext context, String errorMessage)? errorBuilder;
 
   /// The colors to use for controls on iOS. By default, the iOS player uses
   /// colors sampled from the original iOS 11 designs.
-  final ChewieProgressColors cupertinoProgressColors;
+  final ChewieProgressColors? cupertinoProgressColors;
 
   /// The colors to use for the Material Progress Bar. By default, the Material
   /// player uses the colors from your Theme.
-  final ChewieProgressColors materialProgressColors;
+  final ChewieProgressColors? materialProgressColors;
 
   /// The placeholder is displayed underneath the Video before it is initialized
   /// or played.
-  final Widget placeholder;
+  final Widget? placeholder;
 
   /// A widget which is placed between the video and the controls
-  final Widget overlay;
+  final Widget? overlay;
 
   /// Defines if the player will start in fullscreen when play is pressed
   final bool fullScreenByDefault;
@@ -63,21 +63,21 @@ class NetworkVideoControl {
   final List<DeviceOrientation> deviceOrientationsAfterFullScreen;
 
   /// Defines a custom RoutePageBuilder for the fullscreen
-  final ChewieRoutePageBuilder routePageBuilder;
+  final ChewieRoutePageBuilder? routePageBuilder;
 
   NetworkVideoControl({
     this.autoPlay = false,
-    required this.startAt,
+    this.startAt,
     this.looping = false,
     this.fullScreenByDefault = false,
-    required this.cupertinoProgressColors,
-    required this.materialProgressColors,
-    required this.placeholder,
-    required this.overlay,
+    this.cupertinoProgressColors,
+    this.materialProgressColors,
+    this.placeholder,
+    this.overlay,
     this.showControlsOnInitialize = true,
     this.showControls = true,
-    required this.customControls,
-    required this.errorBuilder,
+    this.customControls,
+    this.errorBuilder,
     this.allowedScreenSleep = true,
     this.isLive = false,
     this.allowFullScreen = true,
@@ -89,6 +89,6 @@ class NetworkVideoControl {
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,
     ],
-    required this.routePageBuilder,
+    this.routePageBuilder,
   });
 }
